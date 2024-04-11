@@ -1,10 +1,12 @@
+User
+apiVersion: v1
+kind: Service
 metadata:
-  name: my-nginx-service
+  name: my-service
 spec:
   selector:
-    app: nginx  # This should match the label of your Nginx pods
+    app:nginx
   ports:
     - protocol: TCP
-      port: 80  # The port the service will be accessible on inside the cluster
-      targetPort: 80  # The target port on the pods to forward to
-  type: ClusterIP  # This is actually the default, so you could omit it
+      port: 80
+      targetPort: 9376
